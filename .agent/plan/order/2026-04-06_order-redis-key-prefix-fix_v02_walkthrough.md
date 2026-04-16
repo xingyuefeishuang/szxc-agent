@@ -1,0 +1,17 @@
+# 订单 Redis Key 前缀风格统一工作总结
+
+## 本次修改
+
+- `ORDER_VOUCHER_ISSUE_LOCK_PREFIX`
+  - 调整为 `PLT:ORDER:VOUCHER:ISSUE:`
+- `DOUYIN_CREATE_ORDER_LOCK_PREFIX`
+  - 调整为 `PLT:ORDER:DOUYIN:CREATE:`
+- `DOUYIN_REFUND_APPLY_IDEMPOTENT_KEY_PREFIX`
+  - 调整为 `PLT:ORDER:DOUYIN:REFUND:APPLY:`
+- `DOUYIN_REFUND_NOTIFY_IDEMPOTENT_KEY_PREFIX`
+  - 调整为 `PLT:ORDER:DOUYIN:REFUND:NOTIFY:`
+
+## 结果
+
+- `OrderRedisKeyConstant` 当前全部前缀已经统一到 `PLT:ORDER:*` 风格
+- 平台内资源锁、发券锁、抖音相关幂等 key 的口径重新一致
